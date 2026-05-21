@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education — Freya Wang</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.timeline { position: relative; margin-top: 8px; }
+.timeline::before {
+  content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+  width: 1px; background: linear-gradient(to bottom, var(--rose), var(--lilac), transparent);
+}
+.t-item { display: grid; grid-template-columns: 60px 1fr; gap: 0 28px; margin-bottom: 48px; }
+.t-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 6px; }
+.t-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--cream); border: 2.5px solid var(--rose);
+  flex-shrink: 0; position: relative; z-index: 1;
+  transition: transform .25s ease;
+}
+.t-item:hover .t-dot { transform: scale(1.35); background: var(--rose); }
+.t-year {
+  font-size: 10px; color: var(--warm-grey); letter-spacing: .1em;
+  text-transform: uppercase; margin-top: 6px; writing-mode: vertical-rl;
+  transform: rotate(180deg); text-align: center;
+}
+.t-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px 28px; backdrop-filter: blur(10px); }
+.t-degree {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--text-dark); line-height: 1.2; margin-bottom: 4px;
+}
+.t-school { font-size: 13px; color: var(--rose); font-weight: 500; letter-spacing: .06em; margin-bottom: 12px; }
+.t-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; font-weight: 300; margin-bottom: 16px; }
+.t-modules { margin-top: 4px; }
+.t-modules h5 { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 8px; }
+.module-list { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.awards { margin-top: 56px; }
+.awards h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--text-dark); margin-bottom: 24px;
+}
+.award-card { display: flex; align-items: flex-start; gap: 18px; padding: 20px 24px; }
+.award-icon { font-size: 24px; flex-shrink: 0; }
+.award-title { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+.award-meta  { font-size: 13px; color: var(--warm-grey); font-weight: 300; }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="overlay" id="overlay"></div>
+<div class="bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">Freya <span>Wang</span></a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="research.html">Research</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="page-main">
+  <a class="back-link" href="index.html">Home</a>
+
+  <header class="page-header reveal">
+    <p class="page-eyebrow">Academic journey</p>
+    <h1 class="page-title">Where I've<br><em>learned</em> & grown</h1>
+  </header>
+
+  <div class="timeline">
+
+    <div class="t-item reveal">
+      <div class="t-dot-col">
+        <div class="t-dot"></div>
+        <div class="t-year">2022–now</div>
+      </div>
+      <div class="t-card">
+        <div class="t-degree">MSc Urban Spatial Science</div>
+        <div class="t-school">UCL Bartlett — Centre for Advanced Spatial Analysis (CASA) · London, UK</div>
+        <p class="t-desc">An interdisciplinary programme fusing urban studies, data science, and spatial thinking. Focused on how computational methods can illuminate complex urban systems — from transport accessibility to neighbourhood change.</p>
+        <div class="t-modules">
+          <h5>Key modules</h5>
+          <div class="module-list">
+            <span class="tag">Foundations of Spatial Data Science</span>
+            <span class="tag sage">Urban Simulation</span>
+            <span class="tag lilac">Geocomputation</span>
+            <span class="tag peach">Machine Learning for Cities</span>
+            <span class="tag mauve">Dissertation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-item reveal">
+      <div class="t-dot-col">
+        <div class="t-dot" style="border-color:var(--lilac)"></div>
+        <div class="t-year">2018–2022</div>
+      </div>
+      <div class="t-card">
+        <div class="t-degree">BSc [Your Undergraduate Degree]</div>
+        <div class="t-school">Your Undergraduate University · City, Country</div>
+        <p class="t-desc">[ Replace with your undergrad description — major, focus areas, notable achievements, GPA if relevant. This is a placeholder. ]</p>
+        <div class="t-modules">
+          <h5>Highlights</h5>
+          <div class="module-list">
+            <span class="tag">Module 1</span>
+            <span class="tag sage">Module 2</span>
+            <span class="tag lilac">Module 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="awards">
+    <h2 class="reveal">Awards & <em style="font-style:italic;color:var(--rose)">Recognition</em></h2>
+    <div class="reveal card award-card">
+      <div class="award-icon">🏆</div>
+      <div>
+        <div class="award-title">[ Award Name ]</div>
+        <div class="award-meta">Organisation · Year</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+  document.querySelectorAll('a[href]').forEach(a => {
+    if (!a.target) a.addEventListener('click', e => {
+      const dest = a.href; if (!dest || dest.startsWith('#')) return;
+      e.preventDefault();
+      document.getElementById('overlay').classList.add('exit');
+      setTimeout(() => { window.location.href = dest; }, 520);
+    });
+  });
+</script>
+</body>
+</html>

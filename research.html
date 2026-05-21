@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Freya Wang</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.research-intro { max-width: 580px; margin-bottom: 52px; }
+.research-intro p { font-size: 15px; color: var(--text-mid); line-height: 1.8; font-weight: 300; }
+
+.research-item { display: grid; grid-template-columns: 80px 1fr; gap: 0 28px; margin-bottom: 36px; }
+.r-year-col { padding-top: 4px; }
+.r-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; color: var(--warm-grey); font-weight: 300; white-space: nowrap;
+}
+.r-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px 28px; backdrop-filter: blur(10px); transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s; }
+.r-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(180,140,150,.15); }
+.r-type { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 6px; }
+.r-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--text-dark); line-height: 1.25; margin-bottom: 8px; }
+.r-venue { font-size: 12px; color: var(--warm-grey); font-weight: 400; margin-bottom: 12px; font-style: italic; }
+.r-abstract { font-size: 13px; color: var(--text-mid); line-height: 1.75; font-weight: 300; margin-bottom: 14px; }
+.r-links { display: flex; gap: 14px; }
+.r-link {
+  font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--rose); text-decoration: none;
+  transition: opacity .2s;
+}
+.r-link:hover { opacity: .6; }
+
+.interests-section { margin-top: 56px; }
+.interests-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--text-dark); margin-bottom: 24px; }
+.interest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.interest-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px; text-align: center; backdrop-filter: blur(8px); transition: transform .25s ease; }
+.interest-card:hover { transform: translateY(-4px); }
+.interest-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+.interest-name { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+.interest-desc { font-size: 12px; color: var(--warm-grey); line-height: 1.5; font-weight: 300; }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="overlay" id="overlay"></div>
+<div class="bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">Freya <span>Wang</span></a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="research.html" class="active">Research</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="page-main">
+  <a class="back-link" href="index.html">Home</a>
+
+  <header class="page-header reveal">
+    <p class="page-eyebrow">Academic work</p>
+    <h1 class="page-title">Research &<br><em>ideas</em></h1>
+  </header>
+
+  <div class="research-intro reveal">
+    <p>My research focuses on urban mobility, spatial inequality, and data-driven approaches to understanding cities. I'm particularly interested in how computational methods can surface patterns that help us build more equitable, accessible urban environments.</p>
+  </div>
+
+  <div class="research-item reveal">
+    <div class="r-year-col"><div class="r-year">2024</div></div>
+    <div class="r-card">
+      <div class="r-type">Dissertation / Thesis</div>
+      <div class="r-title">[ Your Dissertation Title ]</div>
+      <div class="r-venue">UCL CASA, MSc Urban Spatial Science</div>
+      <p class="r-abstract">[ Replace with your dissertation abstract or a brief description. What was the research question? What methods did you use? What were the key findings? ]</p>
+      <div class="r-tags" style="margin-bottom:14px">
+        <span class="tag">Spatial Analysis</span>
+        <span class="tag sage">Python</span>
+        <span class="tag lilac">Urban Systems</span>
+      </div>
+      <div class="r-links">
+        <a class="r-link" href="#">Read Paper →</a>
+        <a class="r-link" href="#">GitHub →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-item reveal">
+    <div class="r-year-col"><div class="r-year">2023</div></div>
+    <div class="r-card">
+      <div class="r-type">Course Project</div>
+      <div class="r-title">[ Another Research / Project Title ]</div>
+      <div class="r-venue">CASA — Foundations of Spatial Data Science</div>
+      <p class="r-abstract">[ Replace with a description of this work. ]</p>
+      <div class="r-tags" style="margin-bottom:14px">
+        <span class="tag peach">Data Science</span>
+        <span class="tag mauve">Visualisation</span>
+      </div>
+      <div class="r-links">
+        <a class="r-link" href="#">Notebook →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="interests-section">
+    <h2 class="reveal">Research <em style="font-style:italic;color:var(--rose)">Interests</em></h2>
+    <div class="interest-grid">
+      <div class="interest-card reveal"><span class="interest-icon">🚇</span><div class="interest-name">Urban Mobility</div><div class="interest-desc">Transport accessibility & equity</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🗺️</span><div class="interest-name">Spatial Inequality</div><div class="interest-desc">Geographic patterns of disparity</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🏙️</span><div class="interest-name">Urban Morphology</div><div class="interest-desc">Form, structure & change</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🤖</span><div class="interest-name">Geocomputation</div><div class="interest-desc">ML applied to urban problems</div></div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+  document.querySelectorAll('a[href]').forEach(a => {
+    if (!a.target) a.addEventListener('click', e => {
+      const dest = a.href; if (!dest || dest.startsWith('#')) return;
+      e.preventDefault();
+      document.getElementById('overlay').classList.add('exit');
+      setTimeout(() => { window.location.href = dest; }, 520);
+    });
+  });
+</script>
+</body>
+</html>

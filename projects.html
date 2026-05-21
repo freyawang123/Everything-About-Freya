@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Freya Wang</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-btn {
+  font-size: 10px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase;
+  padding: 7px 18px; border-radius: 100px; border: 1px solid rgba(212,139,139,.3);
+  background: transparent; color: var(--warm-grey); cursor: none;
+  transition: all .2s; font-family: 'DM Sans', sans-serif;
+}
+.filter-btn:hover, .filter-btn.active { background: var(--rose); color: #fff; border-color: var(--rose); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+
+.proj-card {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: 20px; overflow: hidden; backdrop-filter: blur(10px);
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+  cursor: none;
+}
+.proj-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 56px rgba(180,140,150,.18); }
+
+.proj-thumb {
+  height: 180px; display: flex; align-items: center; justify-content: center;
+  font-size: 52px; position: relative; overflow: hidden;
+}
+.proj-thumb::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(250,247,242,.5));
+}
+
+.proj-body { padding: 20px 22px 24px; }
+.proj-category {
+  font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--rose); font-weight: 500; margin-bottom: 6px;
+}
+.proj-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400; color: var(--text-dark);
+  line-height: 1.2; margin-bottom: 8px;
+}
+.proj-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+.proj-tags { margin-bottom: 16px; }
+.proj-footer { display: flex; gap: 12px; }
+.proj-link {
+  font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--rose); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: gap .2s;
+}
+.proj-link:hover { gap: 10px; }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="overlay" id="overlay"></div>
+<div class="bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">Freya <span>Wang</span></a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="research.html">Research</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="page-main">
+  <a class="back-link" href="index.html">Home</a>
+
+  <header class="page-header reveal">
+    <p class="page-eyebrow">Portfolio</p>
+    <h1 class="page-title">Things I've<br><em>built</em> & explored</h1>
+    <p class="page-subtitle">A collection of spatial data science projects, urban analyses, and code experiments.</p>
+  </header>
+
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+    <button class="filter-btn" onclick="filterProjects('spatial', this)">Spatial Analysis</button>
+    <button class="filter-btn" onclick="filterProjects('ml', this)">Machine Learning</button>
+    <button class="filter-btn" onclick="filterProjects('viz', this)">Visualisation</button>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+    <!-- Cards injected by JS -->
+  </div>
+</main>
+
+<script>
+const projects = [
+  {
+    category: 'spatial',
+    categoryLabel: 'Spatial Analysis',
+    emoji: '🗺️',
+    bg: 'linear-gradient(135deg,rgba(168,197,181,.4),rgba(184,169,217,.3))',
+    title: 'Your Project Title 1',
+    desc: 'Replace with your project description. What problem did it solve? What did you build? What did you find?',
+    tags: ['Python', 'GeoPandas', 'Spatial'],
+    tagClasses: ['tag', 'tag sage', 'tag lilac'],
+    github: '#',
+    demo: ''
+  },
+  {
+    category: 'ml',
+    categoryLabel: 'Machine Learning',
+    emoji: '⚡',
+    bg: 'linear-gradient(135deg,rgba(240,200,168,.4),rgba(242,196,196,.3))',
+    title: 'Your Project Title 2',
+    desc: 'Replace with your project description. What problem did it solve? What did you build? What did you find?',
+    tags: ['Python', 'scikit-learn', 'Pandas'],
+    tagClasses: ['tag peach', 'tag', 'tag sage'],
+    github: '#',
+    demo: ''
+  },
+  {
+    category: 'viz',
+    categoryLabel: 'Visualisation',
+    emoji: '📊',
+    bg: 'linear-gradient(135deg,rgba(201,160,192,.35),rgba(184,169,217,.3))',
+    title: 'Your Project Title 3',
+    desc: 'Replace with your project description. What problem did it solve? What did you build? What did you find?',
+    tags: ['Jupyter', 'Matplotlib', 'Folium'],
+    tagClasses: ['tag mauve', 'tag lilac', 'tag sage'],
+    github: '#',
+    demo: ''
+  },
+  {
+    category: 'spatial',
+    categoryLabel: 'Spatial Analysis',
+    emoji: '🚇',
+    bg: 'linear-gradient(135deg,rgba(242,196,196,.4),rgba(201,160,192,.3))',
+    title: 'Your Project Title 4',
+    desc: 'Replace with your project description. What problem did it solve? What did you build? What did you find?',
+    tags: ['r5py', 'Python', 'Transport'],
+    tagClasses: ['tag', 'tag sage', 'tag lilac'],
+    github: '#',
+    demo: ''
+  },
+];
+
+function renderCards(list) {
+  const grid = document.getElementById('projects-grid');
+  grid.innerHTML = list.map((p, i) => `
+    <div class="proj-card reveal" style="animation-delay:${i*0.08}s" data-cat="${p.category}">
+      <div class="proj-thumb" style="background:${p.bg}">${p.emoji}</div>
+      <div class="proj-body">
+        <div class="proj-category">${p.categoryLabel}</div>
+        <div class="proj-title">${p.title}</div>
+        <p class="proj-desc">${p.desc}</p>
+        <div class="proj-tags">${p.tags.map((t,j)=>`<span class="${p.tagClasses[j]||'tag'}">${t}</span>`).join('')}</div>
+        <div class="proj-footer">
+          ${p.github ? `<a class="proj-link" href="${p.github}" target="_blank">GitHub →</a>` : ''}
+          ${p.demo   ? `<a class="proj-link" href="${p.demo}"   target="_blank">Live Demo →</a>` : ''}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const list = cat === 'all' ? projects : projects.filter(p => p.category === cat);
+  renderCards(list);
+}
+
+renderCards(projects);
+
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
+document.querySelectorAll('a, button, .proj-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+document.querySelectorAll('a[href]').forEach(a => {
+  if (!a.target) a.addEventListener('click', e => {
+    const dest = a.href; if (!dest || dest.startsWith('#')) return;
+    e.preventDefault();
+    document.getElementById('overlay').classList.add('exit');
+    setTimeout(() => { window.location.href = dest; }, 520);
+  });
+});
+</script>
+</body>
+</html>

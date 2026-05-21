@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Freya Wang</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.skill-group h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400; color: var(--text-dark);
+  margin-bottom: 22px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(200,180,185,.25);
+}
+.skill-item { margin-bottom: 20px; }
+.skill-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; }
+.skill-name { font-size: 13px; font-weight: 400; color: var(--text-dark); }
+.skill-level { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--warm-grey); }
+.skill-bar-bg {
+  height: 5px; border-radius: 100px;
+  background: rgba(200,180,185,.2);
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%; border-radius: 100px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+.tools-section { margin-top: 56px; }
+.tools-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--text-dark); margin-bottom: 24px;
+}
+.tools-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.tool-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 18px; border-radius: 100px;
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  font-size: 13px; font-weight: 400; color: var(--text-mid);
+  backdrop-filter: blur(8px);
+  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+}
+.tool-pill:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(180,140,150,.15); }
+.tool-icon { font-size: 16px; }
+
+@media (max-width: 580px) { .skills-layout { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="overlay" id="overlay"></div>
+<div class="bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">Freya <span>Wang</span></a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="research.html">Research</a>
+    <a href="skills.html" class="active">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="page-main">
+  <a class="back-link" href="index.html">Home</a>
+
+  <header class="page-header reveal">
+    <p class="page-eyebrow">Toolkit</p>
+    <h1 class="page-title">What I <em>know</em><br>& what I use</h1>
+  </header>
+
+  <div class="skills-layout">
+    <div class="reveal">
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">Python</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="88" style="background:linear-gradient(90deg,var(--rose),var(--dusty-pink))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">R</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="60" style="background:linear-gradient(90deg,var(--lilac),var(--mauve))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="65" style="background:linear-gradient(90deg,var(--sage),#7BA898)"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">HTML / CSS</span><span class="skill-level">Familiar</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="45" style="background:linear-gradient(90deg,var(--peach),#E8A870)"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="skill-group">
+        <h3>Spatial & Data</h3>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">GeoPandas / Shapely</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85" style="background:linear-gradient(90deg,var(--sage),#7BA898)"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">Pandas / NumPy</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="82" style="background:linear-gradient(90deg,var(--rose),var(--dusty-pink))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">Folium / Kepler.gl</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="70" style="background:linear-gradient(90deg,var(--lilac),var(--mauve))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">QGIS / ArcGIS</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="62" style="background:linear-gradient(90deg,var(--peach),#E8A870)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-section">
+    <h2 class="reveal">Tools & <em style="font-style:italic;color:var(--rose)">Platforms</em></h2>
+    <div class="tools-grid reveal">
+      <div class="tool-pill"><span class="tool-icon">🐍</span>Jupyter Notebook</div>
+      <div class="tool-pill"><span class="tool-icon">🐙</span>Git / GitHub</div>
+      <div class="tool-pill"><span class="tool-icon">📊</span>Matplotlib / Seaborn</div>
+      <div class="tool-pill"><span class="tool-icon">🌍</span>PostGIS</div>
+      <div class="tool-pill"><span class="tool-icon">☁️</span>Google Colab</div>
+      <div class="tool-pill"><span class="tool-icon">🤖</span>scikit-learn</div>
+      <div class="tool-pill"><span class="tool-icon">🚇</span>r5py</div>
+      <div class="tool-pill"><span class="tool-icon">📍</span>OpenStreetMap</div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
+  document.querySelectorAll('a, .tool-pill').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+  document.querySelectorAll('a[href]').forEach(a => {
+    if (!a.target) a.addEventListener('click', e => {
+      const dest = a.href; if (!dest || dest.startsWith('#')) return;
+      e.preventDefault();
+      document.getElementById('overlay').classList.add('exit');
+      setTimeout(() => { window.location.href = dest; }, 520);
+    });
+  });
+
+  // Animate bars on load
+  setTimeout(() => {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }, 400);
+</script>
+</body>
+</html>
