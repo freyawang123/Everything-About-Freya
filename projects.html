@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="shared.css">
 <style>
 .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
-.filter-btn{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:7px 18px;border-radius:100px;border:1px solid rgba(212,139,139,.3);background:transparent;color:var(--warm-grey);cursor:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.filter-btn{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:7px 18px;border-radius:100px;border:1px solid rgba(212,139,139,.3);background:transparent;color:var(--warm-grey);cursor:pointer;transition:all .3s ease}
 .filter-btn:hover,.filter-btn.active{background:var(--rose);color:#fff;border-color:var(--rose)}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
-.proj-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;cursor:none}
+.proj-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s cubic-bezier(.34,1.56,.64,1)}
 .proj-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 56px rgba(180,140,150,.18)}
 .proj-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
 .proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(250,247,242,.4))}
@@ -81,8 +81,8 @@ const PROJECTS = [
     catZh:'数据运营', catEn:'Data Operations',
     titleZh:'投放结构优化 · 朋友圈广告',
     titleEn:'Audience Targeting Optimisation · WeChat Moments',
-    descZh:'通过分析品牌客户的消费习惯，参考竞品爆款广告图优化商品素材，将30%预算转向"货找人"+"人找货"双场景，配合店铺自播与达人切片二次分发，利用商品卡免偎。',
-    descEn:'Analysed customer purchasing habits and benchmarked competitor top-performing ad creatives; refined audience targeting for Valentine's Day gifting demand, resulting in incremental GMV.',
+    descZh:'通过分析品牌客户的消费习惯，参考竞品爆款广告图优化商品素材，将30%预算转向"货找人"+"人找货"双场景，配合店铺自播与达人切片二次分发，满足情人节礼赠需求。',
+    descEn:'Analysed customer purchasing habits and benchmarked competitor top-performing ad creatives; refined audience targeting for Valentine\'s Day gifting demand, resulting in incremental GMV.',
     kpis:['自然流量 +40%','ROI 1.8 → 2.7'],
     tags:[{t:'朋友圈广告',cls:'tag'},{t:'预算优化',cls:'tag peach'},{t:'GMV增长',cls:'tag sage'}],
     period:'2025.04 – 2025.05'
@@ -94,7 +94,7 @@ const PROJECTS = [
     catZh:'CRM运营', catEn:'CRM Operations',
     titleZh:'品牌招新链路转化与派样',
     titleEn:'Brand Acquisition Funnel & Sampling Campaign',
-    descZh:'基于天猫平台用户的消费倾向和意愿，结合品牌战略趋势发展，调整小样内容和优惠券门槛，通过精细化派样引导新客首单；整体ROI提高至3.5，复购券使用率提高至2%。',
+    descZh:'基于天猫平台用户的消费倾向和意愿，结合品牌战略趋势发展，调整小样内容和优惠券门槛，通过精细化派样引导新客首单；整体ROI提高至3.5倍。',
     descEn:'Based on Tmall user purchasing intent and brand strategy, adjusted sampling content and coupon thresholds to guide new customers to first purchase via targeted sampling.',
     kpis:['ROI → 3.5','复购券使用率 +2%'],
     tags:[{t:'会员运营',cls:'tag mauve'},{t:'派样策略',cls:'tag lilac'},{t:'天猫',cls:'tag'}],
@@ -107,8 +107,8 @@ const PROJECTS = [
     catZh:'科研调研', catEn:'Research',
     titleZh:'地理信息系统的选址 · 科研调研',
     titleEn:'GIS-Based Site Selection for Community Centers',
-    descZh:'以数据为导向，优化伦敦市内社区中心的路网结构。与威斯敏斯特议会深度合作，通过算法预测居民通勤需求，基于Python和R实现空间数据定量分析，并通过JavaScript实现产出的在线可视化，最终交付一个轻量化的路网选址系统。',
-    descEn:'Data-driven optimisation of road network structure for community centres in London. Partnered with Westminster City Council; performed quantitative spatial data analysis with Python and R, and delivered an online visualisation tool built with JavaScript.',
+    descZh:'以数据为导向，优化伦敦市内社区中心的路网结构。与威斯敏斯特议会深度合作，通过算法预测居民通勤需求，基于Python和R实现空间数据定量分析与可视化。',
+    descEn:'Data-driven optimisation of road network structure for community centres in London. Partnered with Westminster City Council; performed quantitative spatial data analysis with Python and R.',
     kpis:['Westminster City Council 合作','Python + R + JavaScript'],
     tags:[{t:'Python',cls:'tag sage'},{t:'R',cls:'tag lilac'},{t:'GIS',cls:'tag'},{t:'JavaScript',cls:'tag peach'}],
     period:'2023.05 – 2023.08',
