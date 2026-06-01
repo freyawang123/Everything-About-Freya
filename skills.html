@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>专业技能 — 王静怡</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.skill-group h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--text-dark);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(200,180,185,.25)}
+.skill-item{margin-bottom:18px}
+.skill-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.skill-name{font-size:13px;font-weight:400;color:var(--text-dark)}
+.skill-level{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-grey)}
+.skill-bar-bg{height:5px;border-radius:100px;background:rgba(200,180,185,.2);overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:100px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.tools-section{margin-top:52px}
+.tools-section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--text-dark);margin-bottom:22px}
+.tools-grid{display:flex;flex-wrap:wrap;gap:10px}
+.tool-pill{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:100px;background:var(--card-bg);border:1px solid var(--card-border);font-size:13px;font-weight:400;color:var(--text-mid);backdrop-filter:blur(8px);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
+.tool-pill:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(180,140,150,.15)}
+.tool-icon{font-size:16px}
+@media(max-width:580px){.skills-layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="overlay" id="overlay"></div>
+<div class="bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="grain"></div>
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">Jingyi <span>Wang</span></a>
+  <div class="nav-links">
+    <a href="about.html" data-zh="关于我" data-en="About">关于我</a>
+    <a href="education.html" data-zh="教育背景" data-en="Education">教育背景</a>
+    <a href="work.html" data-zh="工作经历" data-en="Experience">工作经历</a>
+    <a href="projects.html" data-zh="项目经历" data-en="Projects">项目经历</a>
+    <a href="skills.html" class="active" data-zh="专业技能" data-en="Skills">专业技能</a>
+    <a href="contact.html" data-zh="联系我" data-en="Contact">联系我</a>
+    <button class="lang-btn" id="langBtn">EN</button>
+  </div>
+</nav>
+<main class="page-main">
+  <a class="back-link" href="index.html" data-zh="首页" data-en="Home">首页</a>
+  <header class="page-header reveal">
+    <p class="page-eyebrow" data-zh="我的工具箱" data-en="My toolkit">我的工具箱</p>
+    <h1 class="page-title" data-zh="<em>技能</em>与工具" data-en="Skills &amp; <em>Tools</em>"><em>技能</em>与工具</h1>
+  </header>
+
+  <div class="skills-layout">
+    <div class="reveal">
+      <div class="skill-group">
+        <h3 data-zh="数据分析" data-en="Data Analysis">数据分析</h3>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">Python</span><span class="skill-level" data-zh="熟练" data-en="Proficient">熟练</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="82" style="background:linear-gradient(90deg,var(--rose),var(--dusty-pink))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">R</span><span class="skill-level" data-zh="熟练" data-en="Proficient">熟练</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="78" style="background:linear-gradient(90deg,var(--lilac),var(--mauve))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">SQL / SPSS</span><span class="skill-level" data-zh="熟悉" data-en="Familiar">熟悉</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="65" style="background:linear-gradient(90deg,var(--sage),#7BA898)"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">JavaScript</span><span class="skill-level" data-zh="了解" data-en="Basic">了解</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="42" style="background:linear-gradient(90deg,var(--peach),#E8A870)"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="skill-group">
+        <h3 data-zh="营销与运营" data-en="Marketing & Operations">营销与运营</h3>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name" data-zh="广告投放（天猫/品牌官网）" data-en="Paid Advertising (Tmall/Brand Site)">广告投放（天猫/品牌官网）</span><span class="skill-level" data-zh="熟练" data-en="Proficient">熟练</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85" style="background:linear-gradient(90deg,var(--rose),var(--dusty-pink))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">CRM / <span data-zh="会员运营" data-en="Membership Operations">会员运营</span></span><span class="skill-level" data-zh="熟练" data-en="Proficient">熟练</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80" style="background:linear-gradient(90deg,var(--mauve),var(--lilac))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name">GIS / ArcGIS / QGIS</span><span class="skill-level" data-zh="熟悉" data-en="Familiar">熟悉</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="70" style="background:linear-gradient(90deg,var(--sage),#7BA898)"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span class="skill-name" data-zh="数据可视化" data-en="Data Visualisation">数据可视化</span><span class="skill-level" data-zh="熟练" data-en="Proficient">熟练</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="75" style="background:linear-gradient(90deg,var(--peach),#E8A870)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-section">
+    <h2 class="reveal" data-zh="软件与<em style='font-style:italic;color:var(--rose)'>平台</em>" data-en="Software &amp; <em style='font-style:italic;color:var(--rose)'>Platforms</em>">软件与<em style="font-style:italic;color:var(--rose)">平台</em></h2>
+    <div class="tools-grid reveal">
+      <div class="tool-pill"><span class="tool-icon">🐍</span>Python</div>
+      <div class="tool-pill"><span class="tool-icon">📊</span>R / RStudio</div>
+      <div class="tool-pill"><span class="tool-icon">🗺️</span>ArcGIS / QGIS</div>
+      <div class="tool-pill"><span class="tool-icon">💾</span>SQL / SPSS</div>
+      <div class="tool-pill"><span class="tool-icon">📈</span>PowerPoint / Excel</div>
+      <div class="tool-pill"><span class="tool-icon">🤖</span>AI <span data-zh="辅助工具" data-en="Tools">辅助工具</span></div>
+      <div class="tool-pill"><span class="tool-icon">🛒</span><span data-zh="天猫/淘宝数据平台" data-en="Tmall/Taobao Analytics">天猫/淘宝数据平台</span></div>
+      <div class="tool-pill"><span class="tool-icon">🌐</span>WebGIS</div>
+      <div class="tool-pill"><span class="tool-icon">🐙</span>Git / GitHub</div>
+    </div>
+  </div>
+</main>
+<script>
+setTimeout(()=>{
+  document.querySelectorAll('.skill-bar-fill').forEach(b=>{b.style.width=b.dataset.pct+'%'});
+},500);
+</script>
+<script src="_nav.js"></script>
+</body>
+</html>
