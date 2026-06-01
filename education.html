@@ -17,7 +17,7 @@
 .t-school{font-size:12px;color:var(--rose);font-weight:500;letter-spacing:.06em;margin-bottom:12px}
 .t-desc{font-size:14px;color:var(--text-mid);line-height:1.75;font-weight:300;margin-bottom:14px}
 .t-modules h5{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-grey);margin-bottom:8px}
-.honour-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:#8B5C3A;background:rgba(240,200,168,.2);border:1px solid rgba(240,200,168,.4);border-radius:100px;padding:4px 12px;margin-bottom:12px}
+.honour-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:#8B5C3A;background:rgba(240,200,168,.2);border:1px solid rgba(240,200,168,.4);border-radius:100px;padding:4px 12px;margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -50,7 +50,7 @@
       <div class="t-card">
         <div class="t-degree" data-zh="城市空间科学（数据分析方向）理学硕士" data-en="MSc Urban Spatial Science (Data Analysis)">城市空间科学（数据分析方向）理学硕士</div>
         <div class="t-school" data-zh="伦敦大学学院（UCL）· 伦敦，英国" data-en="University College London (UCL) · London, UK">伦敦大学学院（UCL）· 伦敦，英国</div>
-        <p class="t-desc" data-zh="跨学科专业，融合城市研究、数据科学与空间思维。专注于运用计算方法解析复杂城市系统，探索交通可达性、城市形态与社区动态背后的规律。" data-en="An interdisciplinary programme fusing urban studies, data science, and spatial thinking. Focused on using computational methods to understand complex urban systems — from transport accessibility to neighbourhood change.">跨学科专业，融合城市研究、数据科学与空间思维。专注于运用计算方法解析复杂城市系统，探索交通可达性、城市形态与社区动态背后的规律。</p>
+        <p class="t-desc" data-zh="跨学科专业，融合城市研究、数据科学与空间思维。专注于运用计算方法解析复杂城市系统，探索交通可达性、城市形态、房地产与设计对社会的影响。" data-en="Interdisciplinary programme blending urban research, data science, and spatial thinking. Focused on using computational methods to analyse complex urban systems and explore accessibility, urban morphology, real estate and their social impact.">跨学科专业，融合城市研究、数据科学与空间思维。专注于运用计算方法解析复杂城市系统，探索交通可达性、城市形态、房地产与设计对社会的影响。</p>
         <div class="t-modules">
           <h5 data-zh="主修课程" data-en="Key modules">主修课程</h5>
           <div>
@@ -69,7 +69,7 @@
         <div class="honour-badge">🏆 <span data-zh="一等荣誉学位" data-en="First-Class Honours">一等荣誉学位</span></div>
         <div class="t-degree" data-zh="城市研究和规划（地理信息技术方向）文学学士" data-en="BA Urban Studies and Planning (GIS)">城市研究和规划（地理信息技术方向）文学学士</div>
         <div class="t-school" data-zh="谢菲尔德大学 · 谢菲尔德，英国" data-en="University of Sheffield · Sheffield, UK">谢菲尔德大学 · 谢菲尔德，英国</div>
-        <p class="t-desc" data-zh="以一等荣誉学位毕业，专注于地理信息技术方向，系统学习城市设计、房地产与建筑、城市历史等核心课程，培养了扎实的空间分析与定量研究能力。" data-en="Graduated with First-Class Honours. Focused on GIS and urban planning, building strong foundations in spatial analysis, quantitative research, and urban design.">以一等荣誉学位毕业，专注于地理信息技术方向，系统学习城市设计、房地产与建筑、城市历史等核心课程，培养了扎实的空间分析与定量研究能力。</p>
+        <p class="t-desc" data-zh="以一等荣誉学位毕业，专注于地理信息技术方向，系统学习城市设计、房地产与建筑、城市历史等核心课程，培养了扎实的城市分析和GIS技术能力。" data-en="Graduated with First-Class Honours, specialising in GIS. Studied urban design, real estate, architecture, and urban history with solid skillsin spatial analysis and GIS technology.">以一等荣誉学位毕业，专注于地理信息技术方向，系统学习城市设计、房地产与建筑、城市历史等核心课程，培养了扎实的城市分析和GIS技术能力。</p>
         <div class="t-modules">
           <h5 data-zh="主修课程" data-en="Key modules">主修课程</h5>
           <div>
@@ -84,6 +84,51 @@
     </div>
   </div>
 </main>
-<script src="_nav.js"></script>
+<script>
+(function(){
+  const cursor = document.getElementById('cursor');
+  if(cursor){
+    document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+    document.querySelectorAll('a,button,.card,.tool-pill').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+      el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
+    });
+  }
+  document.querySelectorAll('a[href]').forEach(a=>{
+    if(a.target||a.href.startsWith('mailto:')||a.href.startsWith('tel:')) return;
+    a.addEventListener('click',e=>{
+      const dest=a.href;
+      if(!dest||dest.startsWith('#')) return;
+      e.preventDefault();
+      const ov=document.getElementById('overlay');
+      if(ov){ov.classList.add('exit');setTimeout(()=>{window.location.href=dest},520);}
+      else{window.location.href=dest;}
+    });
+  });
+  const langBtn=document.getElementById('langBtn');
+  if(!langBtn) return;
+  const lang=localStorage.getItem('lang')||'zh';
+  langBtn.textContent=lang==='zh'?'EN':'中';
+  applyLang(lang);
+  langBtn.addEventListener('click',()=>{
+    const cur=localStorage.getItem('lang')||'zh';
+    const next=cur==='zh'?'en':'zh';
+    localStorage.setItem('lang',next);
+    langBtn.textContent=next==='zh'?'EN':'中';
+    applyLang(next);
+  });
+  function applyLang(l){
+    document.querySelectorAll('[data-zh],[data-en]').forEach(el=>{
+      const t=el.getAttribute('data-'+l);
+      if(t!==null) el.innerHTML=t;
+    });
+    document.querySelectorAll('[data-zh-placeholder],[data-en-placeholder]').forEach(el=>{
+      const t=el.getAttribute('data-'+l+'-placeholder');
+      if(t!==null) el.placeholder=t;
+    });
+    document.documentElement.lang=l==='zh'?'zh':'en';
+  }
+})();
+</script>
 </body>
 </html>

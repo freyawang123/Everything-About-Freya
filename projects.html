@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="shared.css">
 <style>
 .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
-.filter-btn{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:7px 18px;border-radius:100px;border:1px solid rgba(212,139,139,.3);background:transparent;color:var(--warm-grey);cursor:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.filter-btn{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:7px 18px;border-radius:100px;border:1px solid rgba(212,139,139,.3);background:transparent;color:var(--warm-grey);cursor:pointer;transition:all .2s}
 .filter-btn:hover,.filter-btn.active{background:var(--rose);color:#fff;border-color:var(--rose)}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
 .proj-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;cursor:none}
@@ -68,7 +68,7 @@ const PROJECTS = [
     catZh:'广告投放运营', catEn:'Advertising Operations',
     titleZh:'特定IP相关消费者的投放细化',
     titleEn:'Targeted Advertising for IP-Related Consumers',
-    descZh:'针对IP产品受众高度垂直的特性，优化投放人群包和标题主图设计，确保爆款稳基本盘，IP拉新，通过全链路差异化避免内耗，实现增量而非转移。',
+    descZh:'针对IP产品受众高度垂直的特性，优化投放人群包和标题主图设计，确保爆款稳基本盘，IP拉新，通过全链路差异化避免内耗，实现增量而非内耗。',
     descEn:'Optimised targeting and creatives for vertical IP audiences to sustain bestsellers and drive new customer acquisition via full-funnel differentiation to prevent cannibalisation.',
     kpis:['IP CVR +1.3%','全店转化率 +1% / Store CVR +1%'],
     tags:[{t:'天猫广告 / Tmall Ads',cls:'tag'},{t:'人群包优化',cls:'tag sage'},{t:'ROI优化',cls:'tag lilac'}],
@@ -81,8 +81,8 @@ const PROJECTS = [
     catZh:'数据运营', catEn:'Data Operations',
     titleZh:'投放结构优化 · 朋友圈广告',
     titleEn:'Audience Targeting Optimisation · WeChat Moments',
-    descZh:'通过分析品牌客户的消费习惯，参考竞品爆款广告图优化商品素材，将30%预算转向"货找人"+"人找货"双场景，配合店铺自播与达人切片二次分发，利用商品卡免偎。',
-    descEn:'Analysed customer purchasing habits and benchmarked competitor top-performing ad creatives; refined audience targeting for Valentine's Day gifting demand, resulting in incremental GMV.',
+    descZh:'通过分析品牌客户的消费习惯，参考竞品爆款广告图优化商品素材，将30%预算转向「货找人」+「人找货」双场景，配合店铺自播与达人切片二次转化。',
+    descEn:'Analysed customer purchasing habits and benchmarked competitor top-performing ad creatives; refined audience targeting for Valentine\'s Day gifting demand, resulting in incremental GMV.',
     kpis:['自然流量 +40%','ROI 1.8 → 2.7'],
     tags:[{t:'朋友圈广告',cls:'tag'},{t:'预算优化',cls:'tag peach'},{t:'GMV增长',cls:'tag sage'}],
     period:'2025.04 – 2025.05'
@@ -94,7 +94,7 @@ const PROJECTS = [
     catZh:'CRM运营', catEn:'CRM Operations',
     titleZh:'品牌招新链路转化与派样',
     titleEn:'Brand Acquisition Funnel & Sampling Campaign',
-    descZh:'基于天猫平台用户的消费倾向和意愿，结合品牌战略趋势发展，调整小样内容和优惠券门槛，通过精细化派样引导新客首单；整体ROI提高至3.5，复购券使用率提高至2%。',
+    descZh:'基于天猫平台用户的消费倾向和意愿，结合品牌战略趋势发展，调整小样内容和优惠券门槛，通过精细化派样引导新客首单；整体ROI提高至3.5+。',
     descEn:'Based on Tmall user purchasing intent and brand strategy, adjusted sampling content and coupon thresholds to guide new customers to first purchase via targeted sampling.',
     kpis:['ROI → 3.5','复购券使用率 +2%'],
     tags:[{t:'会员运营',cls:'tag mauve'},{t:'派样策略',cls:'tag lilac'},{t:'天猫',cls:'tag'}],
@@ -107,8 +107,8 @@ const PROJECTS = [
     catZh:'科研调研', catEn:'Research',
     titleZh:'地理信息系统的选址 · 科研调研',
     titleEn:'GIS-Based Site Selection for Community Centers',
-    descZh:'以数据为导向，优化伦敦市内社区中心的路网结构。与威斯敏斯特议会深度合作，通过算法预测居民通勤需求，基于Python和R实现空间数据定量分析，并通过JavaScript实现产出的在线可视化，最终交付一个轻量化的路网选址系统。',
-    descEn:'Data-driven optimisation of road network structure for community centres in London. Partnered with Westminster City Council; performed quantitative spatial data analysis with Python and R, and delivered an online visualisation tool built with JavaScript.',
+    descZh:'以数据为导向，优化伦敦市内社区中心的路网结构。与威斯敏斯特议会深度合作，通过算法预测居民通勤需求，基于Python和R实现空间数据分析。',
+    descEn:'Data-driven optimisation of road network structure for community centres in London. Partnered with Westminster City Council; performed quantitative spatial data analysis with Python and R.',
     kpis:['Westminster City Council 合作','Python + R + JavaScript'],
     tags:[{t:'Python',cls:'tag sage'},{t:'R',cls:'tag lilac'},{t:'GIS',cls:'tag'},{t:'JavaScript',cls:'tag peach'}],
     period:'2023.05 – 2023.08',
@@ -145,11 +145,54 @@ function filterProjects(cat,btn){
 
 renderCards(PROJECTS);
 
-// re-render on lang change
-const origApply = window._applyLang;
 const observer = new MutationObserver(()=>{ renderCards(PROJECTS); });
 observer.observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 </script>
-<script src="_nav.js"></script>
+<script>
+(function(){
+  const cursor = document.getElementById('cursor');
+  if(cursor){
+    document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+    document.querySelectorAll('a,button,.card,.tool-pill').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+      el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
+    });
+  }
+  document.querySelectorAll('a[href]').forEach(a=>{
+    if(a.target||a.href.startsWith('mailto:')||a.href.startsWith('tel:')) return;
+    a.addEventListener('click',e=>{
+      const dest=a.href;
+      if(!dest||dest.startsWith('#')) return;
+      e.preventDefault();
+      const ov=document.getElementById('overlay');
+      if(ov){ov.classList.add('exit');setTimeout(()=>{window.location.href=dest},520);}
+      else{window.location.href=dest;}
+    });
+  });
+  const langBtn=document.getElementById('langBtn');
+  if(!langBtn) return;
+  const lang=localStorage.getItem('lang')||'zh';
+  langBtn.textContent=lang==='zh'?'EN':'中';
+  applyLang(lang);
+  langBtn.addEventListener('click',()=>{
+    const cur=localStorage.getItem('lang')||'zh';
+    const next=cur==='zh'?'en':'zh';
+    localStorage.setItem('lang',next);
+    langBtn.textContent=next==='zh'?'EN':'中';
+    applyLang(next);
+  });
+  function applyLang(l){
+    document.querySelectorAll('[data-zh],[data-en]').forEach(el=>{
+      const t=el.getAttribute('data-'+l);
+      if(t!==null) el.innerHTML=t;
+    });
+    document.querySelectorAll('[data-zh-placeholder],[data-en-placeholder]').forEach(el=>{
+      const t=el.getAttribute('data-'+l+'-placeholder');
+      if(t!==null) el.placeholder=t;
+    });
+    document.documentElement.lang=l==='zh'?'zh':'en';
+  }
+})();
+</script>
 </body>
 </html>
