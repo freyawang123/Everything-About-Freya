@@ -20,9 +20,13 @@
       else{window.location.href=dest;}
     });
   });
+  
   // Lang button
   const langBtn=document.getElementById('langBtn');
   const lang=localStorage.getItem('lang')||'zh';
+  
+  // Create custom event for language change
+  const langChangeEvent = new Event('languagechange', { bubbles: true });
   
   function applyLang(l){
     document.querySelectorAll('[data-zh],[data-en]').forEach(el=>{
@@ -34,7 +38,14 @@
       if(t!==null) el.placeholder=t;
     });
     document.documentElement.lang=l==='zh'?'zh':'en';
+    localStorage.setItem('lang',l);
+    
+    // Trigger custom event for dynamic content re-render
+    document.documentElement.dispatchEvent(langChangeEvent);
   }
+  
+  // Make applyLang global for other scripts
+  window._applyLang = applyLang;
   
   // 页面加载时立即应用保存的语言
   applyLang(lang);
@@ -45,8 +56,7 @@
   langBtn.addEventListener('click',()=>{
     const cur=localStorage.getItem('lang')||'zh';
     const next=cur==='zh'?'en':'zh';
-    localStorage.setItem('lang',next);
-    langBtn.textContent=next==='zh'?'EN':'中';
     applyLang(next);
+    langBtn.textContent=next==='zh'?'EN':'中';
   });
 })();
