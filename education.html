@@ -1,50 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Education — Freya Wang</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>教育背景 — 王静怡</title>
 <link rel="stylesheet" href="shared.css">
 <style>
-.timeline { position: relative; margin-top: 8px; }
-.timeline::before {
-  content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
-  width: 1px; background: linear-gradient(to bottom, var(--rose), var(--lilac), transparent);
-}
-.t-item { display: grid; grid-template-columns: 60px 1fr; gap: 0 28px; margin-bottom: 48px; }
-.t-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 6px; }
-.t-dot {
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--cream); border: 2.5px solid var(--rose);
-  flex-shrink: 0; position: relative; z-index: 1;
-  transition: transform .25s ease;
-}
-.t-item:hover .t-dot { transform: scale(1.35); background: var(--rose); }
-.t-year {
-  font-size: 10px; color: var(--warm-grey); letter-spacing: .1em;
-  text-transform: uppercase; margin-top: 6px; writing-mode: vertical-rl;
-  transform: rotate(180deg); text-align: center;
-}
-.t-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px 28px; backdrop-filter: blur(10px); }
-.t-degree {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 400; color: var(--text-dark); line-height: 1.2; margin-bottom: 4px;
-}
-.t-school { font-size: 13px; color: var(--rose); font-weight: 500; letter-spacing: .06em; margin-bottom: 12px; }
-.t-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; font-weight: 300; margin-bottom: 16px; }
-.t-modules { margin-top: 4px; }
-.t-modules h5 { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 8px; }
-.module-list { display: flex; flex-wrap: wrap; gap: 6px; }
-
-.awards { margin-top: 56px; }
-.awards h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 300; color: var(--text-dark); margin-bottom: 24px;
-}
-.award-card { display: flex; align-items: flex-start; gap: 18px; padding: 20px 24px; }
-.award-icon { font-size: 24px; flex-shrink: 0; }
-.award-title { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
-.award-meta  { font-size: 13px; color: var(--warm-grey); font-weight: 300; }
+.timeline{position:relative;margin-top:8px}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--rose),var(--lilac),transparent)}
+.t-item{display:grid;grid-template-columns:56px 1fr;gap:0 24px;margin-bottom:44px}
+.t-dot-col{display:flex;flex-direction:column;align-items:center;padding-top:6px}
+.t-dot{width:16px;height:16px;border-radius:50%;background:var(--cream);border:2.5px solid var(--rose);flex-shrink:0;z-index:1;transition:transform .25s}
+.t-item:hover .t-dot{transform:scale(1.35);background:var(--rose)}
+.t-period{font-size:9px;color:var(--warm-grey);letter-spacing:.08em;text-transform:uppercase;margin-top:6px;text-align:center;line-height:1.4}
+.t-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px;padding:22px 26px;backdrop-filter:blur(10px)}
+.t-degree{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--text-dark);line-height:1.2;margin-bottom:3px}
+.t-school{font-size:12px;color:var(--rose);font-weight:500;letter-spacing:.06em;margin-bottom:12px}
+.t-desc{font-size:14px;color:var(--text-mid);line-height:1.75;font-weight:300;margin-bottom:14px}
+.t-modules h5{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-grey);margin-bottom:8px}
+.honour-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:#8B5C3A;background:rgba(240,200,168,.2);border:1px solid rgba(240,200,168,.4);border-radius:100px;padding:4px 12px;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -52,100 +25,65 @@
 <div class="overlay" id="overlay"></div>
 <div class="bg"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
 <div class="grain"></div>
-
 <nav class="site-nav">
-  <a class="nav-logo" href="index.html">Freya <span>Wang</span></a>
+  <a class="nav-logo" href="index.html">Jingyi <span>Wang</span></a>
   <div class="nav-links">
-    <a href="about.html">About</a>
-    <a href="education.html" class="active">Education</a>
-    <a href="projects.html">Projects</a>
-    <a href="research.html">Research</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
+    <a href="about.html" data-zh="关于我" data-en="About">关于我</a>
+    <a href="education.html" class="active" data-zh="教育背景" data-en="Education">教育背景</a>
+    <a href="work.html" data-zh="工作经历" data-en="Experience">工作经历</a>
+    <a href="projects.html" data-zh="项目经历" data-en="Projects">项目经历</a>
+    <a href="skills.html" data-zh="专业技能" data-en="Skills">专业技能</a>
+    <a href="contact.html" data-zh="联系我" data-en="Contact">联系我</a>
+    <button class="lang-btn" id="langBtn">EN</button>
   </div>
 </nav>
-
 <main class="page-main">
-  <a class="back-link" href="index.html">Home</a>
-
+  <a class="back-link" href="index.html" data-zh="首页" data-en="Home">首页</a>
   <header class="page-header reveal">
-    <p class="page-eyebrow">Academic journey</p>
-    <h1 class="page-title">Where I've<br><em>learned</em> & grown</h1>
+    <p class="page-eyebrow" data-zh="求学之路" data-en="Academic journey">求学之路</p>
+    <h1 class="page-title" data-zh="我的<em>教育背景</em>" data-en="Where I've <em>learned</em>">我的<em>教育背景</em></h1>
   </header>
 
   <div class="timeline">
-
     <div class="t-item reveal">
-      <div class="t-dot-col">
-        <div class="t-dot"></div>
-        <div class="t-year">2022–now</div>
-      </div>
+      <div class="t-dot-col"><div class="t-dot"></div><div class="t-period">2022.09<br>—<br>2023.12</div></div>
       <div class="t-card">
-        <div class="t-degree">MSc Urban Spatial Science</div>
-        <div class="t-school">UCL Bartlett — Centre for Advanced Spatial Analysis (CASA) · London, UK</div>
-        <p class="t-desc">An interdisciplinary programme fusing urban studies, data science, and spatial thinking. Focused on how computational methods can illuminate complex urban systems — from transport accessibility to neighbourhood change.</p>
+        <div class="t-degree" data-zh="城市空间科学（数据分析方向）理学硕士" data-en="MSc Urban Spatial Science (Data Analysis)">城市空间科学（数据分析方向）理学硕士</div>
+        <div class="t-school" data-zh="伦敦大学学院（UCL）· 伦敦，英国" data-en="University College London (UCL) · London, UK">伦敦大学学院（UCL）· 伦敦，英国</div>
+        <p class="t-desc" data-zh="跨学科专业，融合城市研究、数据科学与空间思维。专注于运用计算方法解析复杂城市系统，探索交通可达性、城市形态与社区动态背后的规律。" data-en="An interdisciplinary programme fusing urban studies, data science, and spatial thinking. Focused on using computational methods to understand complex urban systems — from transport accessibility to neighbourhood change.">跨学科专业，融合城市研究、数据科学与空间思维。专注于运用计算方法解析复杂城市系统，探索交通可达性、城市形态与社区动态背后的规律。</p>
         <div class="t-modules">
-          <h5>Key modules</h5>
-          <div class="module-list">
-            <span class="tag">Foundations of Spatial Data Science</span>
-            <span class="tag sage">Urban Simulation</span>
-            <span class="tag lilac">Geocomputation</span>
-            <span class="tag peach">Machine Learning for Cities</span>
-            <span class="tag mauve">Dissertation</span>
+          <h5 data-zh="主修课程" data-en="Key modules">主修课程</h5>
+          <div>
+            <span class="tag" data-zh="高级空间分析（R/Python）" data-en="Advanced Spatial Analysis (R, Python)">高级空间分析（R/Python）</span>
+            <span class="tag sage" data-zh="机器学习" data-en="Machine Learning">机器学习</span>
+            <span class="tag lilac">WebGIS</span>
+            <span class="tag peach" data-zh="高级定量分析" data-en="Advanced Quantitative Analysis">高级定量分析</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="t-item reveal">
-      <div class="t-dot-col">
-        <div class="t-dot" style="border-color:var(--lilac)"></div>
-        <div class="t-year">2018–2022</div>
-      </div>
+      <div class="t-dot-col"><div class="t-dot" style="border-color:var(--lilac)"></div><div class="t-period">2019.09<br>—<br>2022.06</div></div>
       <div class="t-card">
-        <div class="t-degree">BSc [Your Undergraduate Degree]</div>
-        <div class="t-school">Your Undergraduate University · City, Country</div>
-        <p class="t-desc">[ Replace with your undergrad description — major, focus areas, notable achievements, GPA if relevant. This is a placeholder. ]</p>
+        <div class="honour-badge">🏆 <span data-zh="一等荣誉学位" data-en="First-Class Honours">一等荣誉学位</span></div>
+        <div class="t-degree" data-zh="城市研究和规划（地理信息技术方向）文学学士" data-en="BA Urban Studies and Planning (GIS)">城市研究和规划（地理信息技术方向）文学学士</div>
+        <div class="t-school" data-zh="谢菲尔德大学 · 谢菲尔德，英国" data-en="University of Sheffield · Sheffield, UK">谢菲尔德大学 · 谢菲尔德，英国</div>
+        <p class="t-desc" data-zh="以一等荣誉学位毕业，专注于地理信息技术方向，系统学习城市设计、房地产与建筑、城市历史等核心课程，培养了扎实的空间分析与定量研究能力。" data-en="Graduated with First-Class Honours. Focused on GIS and urban planning, building strong foundations in spatial analysis, quantitative research, and urban design.">以一等荣誉学位毕业，专注于地理信息技术方向，系统学习城市设计、房地产与建筑、城市历史等核心课程，培养了扎实的空间分析与定量研究能力。</p>
         <div class="t-modules">
-          <h5>Highlights</h5>
-          <div class="module-list">
-            <span class="tag">Module 1</span>
-            <span class="tag sage">Module 2</span>
-            <span class="tag lilac">Module 3</span>
+          <h5 data-zh="主修课程" data-en="Key modules">主修课程</h5>
+          <div>
+            <span class="tag" data-zh="GIS数据分析（ArcGIS, QGIS）" data-en="GIS Data Analysis (ArcGIS, QGIS)">GIS数据分析（ArcGIS, QGIS）</span>
+            <span class="tag sage" data-zh="统计学（SQL, SPSS）" data-en="Statistics (SQL, SPSS)">统计学（SQL, SPSS）</span>
+            <span class="tag lilac" data-zh="城市设计" data-en="Urban Design">城市设计</span>
+            <span class="tag peach" data-zh="房地产与建筑" data-en="Real Estate & Architecture">房地产与建筑</span>
+            <span class="tag mauve" data-zh="城市历史" data-en="Urban History">城市历史</span>
           </div>
         </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="awards">
-    <h2 class="reveal">Awards & <em style="font-style:italic;color:var(--rose)">Recognition</em></h2>
-    <div class="reveal card award-card">
-      <div class="award-icon">🏆</div>
-      <div>
-        <div class="award-title">[ Award Name ]</div>
-        <div class="award-meta">Organisation · Year</div>
       </div>
     </div>
   </div>
 </main>
-
-<script>
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
-  document.querySelectorAll('a').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-  });
-  document.querySelectorAll('a[href]').forEach(a => {
-    if (!a.target) a.addEventListener('click', e => {
-      const dest = a.href; if (!dest || dest.startsWith('#')) return;
-      e.preventDefault();
-      document.getElementById('overlay').classList.add('exit');
-      setTimeout(() => { window.location.href = dest; }, 520);
-    });
-  });
-</script>
+<script src="_nav.js"></script>
 </body>
 </html>
