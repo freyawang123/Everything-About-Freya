@@ -23,7 +23,8 @@
   
   // Lang button
   const langBtn=document.getElementById('langBtn');
-  const lang=localStorage.getItem('lang')||'zh';
+  const savedLang = localStorage.getItem('lang');
+  const lang = savedLang || 'zh';
   
   // Create custom event for language change
   const langChangeEvent = new Event('languagechange', { bubbles: true });
@@ -47,7 +48,7 @@
   // Make applyLang global for other scripts
   window._applyLang = applyLang;
   
-  // 页面加载时立即应用保存的语言
+  // 页面加载时立即应用保存的语言（默认中文）
   applyLang(lang);
   
   // 只在存在语言按钮时添加切换事件
