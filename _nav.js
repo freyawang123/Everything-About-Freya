@@ -22,17 +22,8 @@
   });
   // Lang button
   const langBtn=document.getElementById('langBtn');
-  if(!langBtn) return;
   const lang=localStorage.getItem('lang')||'zh';
-  langBtn.textContent=lang==='zh'?'EN':'中';
-  applyLang(lang);
-  langBtn.addEventListener('click',()=>{
-    const cur=localStorage.getItem('lang')||'zh';
-    const next=cur==='zh'?'en':'zh';
-    localStorage.setItem('lang',next);
-    langBtn.textContent=next==='zh'?'EN':'中';
-    applyLang(next);
-  });
+  
   function applyLang(l){
     document.querySelectorAll('[data-zh],[data-en]').forEach(el=>{
       const t=el.getAttribute('data-'+l);
@@ -44,4 +35,18 @@
     });
     document.documentElement.lang=l==='zh'?'zh':'en';
   }
+  
+  // 页面加载时立即应用保存的语言
+  applyLang(lang);
+  
+  // 只在存在语言按钮时添加切换事件
+  if(!langBtn) return;
+  langBtn.textContent=lang==='zh'?'EN':'中';
+  langBtn.addEventListener('click',()=>{
+    const cur=localStorage.getItem('lang')||'zh';
+    const next=cur==='zh'?'en':'zh';
+    localStorage.setItem('lang',next);
+    langBtn.textContent=next==='zh'?'EN':'中';
+    applyLang(next);
+  });
 })();
