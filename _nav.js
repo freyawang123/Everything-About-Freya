@@ -36,7 +36,7 @@
   function applyLang(l){
     document.querySelectorAll('[data-zh],[data-en]').forEach(el=>{
       const t=el.getAttribute('data-'+l);
-      if(t!==null) el.innerHTML=t;
+      if(t!==null) el.textContent=t;
     });
     document.querySelectorAll('[data-zh-placeholder],[data-en-placeholder]').forEach(el=>{
       const t=el.getAttribute('data-'+l+'-placeholder');
