@@ -145,10 +145,10 @@ function filterProjects(cat,btn){
 
 renderCards(PROJECTS);
 
-// re-render on lang change
-const origApply = window._applyLang;
-const observer = new MutationObserver(()=>{ renderCards(PROJECTS); });
-observer.observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+// Listen for language change event from _nav.js
+document.documentElement.addEventListener('languagechange', () => {
+  renderCards(PROJECTS);
+});
 </script>
 <script src="_nav.js"></script>
 </body>
