@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research — Freya Wang</title>
+<title>研究 — 王静怡</title>
 <link rel="stylesheet" href="shared.css">
 <style>
 .research-intro { max-width: 580px; margin-bottom: 52px; }
@@ -15,7 +15,7 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 15px; color: var(--warm-grey); font-weight: 300; white-space: nowrap;
 }
-.r-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px 28px; backdrop-filter: blur(10px); transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s; }
+.r-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px 28px; backdrop-filter: blur(10px); transition: transform .3s cubic-bezier(.34,1.56,.6,1),box-shadow .3s ease }
 .r-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(180,140,150,.15); }
 .r-type { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 6px; }
 .r-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--text-dark); line-height: 1.25; margin-bottom: 8px; }
@@ -32,7 +32,7 @@
 .interests-section { margin-top: 56px; }
 .interests-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--text-dark); margin-bottom: 24px; }
 .interest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-.interest-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px; text-align: center; backdrop-filter: blur(8px); transition: transform .25s ease; }
+.interest-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px; text-align: center; backdrop-filter: blur(8px); transition: transform .25s ease }
 .interest-card:hover { transform: translateY(-4px); }
 .interest-icon { font-size: 28px; margin-bottom: 10px; display: block; }
 .interest-name { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
@@ -46,44 +46,45 @@
 <div class="grain"></div>
 
 <nav class="site-nav">
-  <a class="nav-logo" href="index.html">Freya <span>Wang</span></a>
+  <a class="nav-logo" href="index.html">Jingyi <span>Wang</span></a>
   <div class="nav-links">
-    <a href="about.html">About</a>
-    <a href="education.html">Education</a>
-    <a href="projects.html">Projects</a>
-    <a href="research.html" class="active">Research</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
+    <a href="about.html" data-zh="关于我" data-en="About">关于我</a>
+    <a href="education.html" data-zh="教育背景" data-en="Education">教育背景</a>
+    <a href="work.html" data-zh="工作经历" data-en="Experience">工作经历</a>
+    <a href="projects.html" data-zh="项目经历" data-en="Projects">项目经历</a>
+    <a href="skills.html" data-zh="专业技能" data-en="Skills">专业技能</a>
+    <a href="contact.html" data-zh="联系我" data-en="Contact">联系我</a>
+    <button class="lang-btn" id="langBtn">EN</button>
   </div>
 </nav>
 
 <main class="page-main">
-  <a class="back-link" href="index.html">Home</a>
+  <a class="back-link" href="index.html" data-zh="首页" data-en="Home">首页</a>
 
   <header class="page-header reveal">
-    <p class="page-eyebrow">Academic work</p>
-    <h1 class="page-title">Research &<br><em>ideas</em></h1>
+    <p class="page-eyebrow" data-zh="学术研究" data-en="Academic work">学术研究</p>
+    <h1 class="page-title" data-zh="研究与<em>思考</em>" data-en="Research &amp;<br><em>ideas</em>">研究与<em>思考</em></h1>
   </header>
 
   <div class="research-intro reveal">
-    <p>My research focuses on urban mobility, spatial inequality, and data-driven approaches to understanding cities. I'm particularly interested in how computational methods can surface patterns that help us build more equitable, accessible urban environments.</p>
+    <p data-zh="我的研究致力于城市流动性、空间不平等和数据驱动的城市理解。特别感兴趣的是计算方法如何揭示城市系统中的复杂模式。" data-en="My research focuses on urban mobility, spatial inequality, and data-driven approaches to understanding cities. I'm particularly interested in how computational methods can surface patterns hidden within complex urban systems.">我的研究致力于城市流动性、空间不平等和数据驱动的城市理解。特别感兴趣的是计算方法如何揭示城市系统中的复杂模式。</p>
   </div>
 
   <div class="research-item reveal">
     <div class="r-year-col"><div class="r-year">2024</div></div>
     <div class="r-card">
-      <div class="r-type">Dissertation / Thesis</div>
-      <div class="r-title">[ Your Dissertation Title ]</div>
-      <div class="r-venue">UCL CASA, MSc Urban Spatial Science</div>
-      <p class="r-abstract">[ Replace with your dissertation abstract or a brief description. What was the research question? What methods did you use? What were the key findings? ]</p>
+      <div class="r-type" data-zh="论文" data-en="Dissertation / Thesis">论文</div>
+      <div class="r-title" data-zh="[ 你的论文标题 ]" data-en="[ Your Dissertation Title ]">[ 你的论文标题 ]</div>
+      <div class="r-venue" data-zh="UCL CASA，城市空间科学硕士" data-en="UCL CASA, MSc Urban Spatial Science">UCL CASA，城市空间科学硕士</div>
+      <p class="r-abstract" data-zh="[ 在此替换为论文摘要或简介。研究问题是什么？使用了什么方法？主要发现是什么？]" data-en="[ Replace with your dissertation abstract or a brief description. What was the research question? What methods did you use? What were the key findings? ]">[ 在此替换为论文摘要或简介。研究问题是什么？使用了什么方法？主要发现是什么？]</p>
       <div class="r-tags" style="margin-bottom:14px">
-        <span class="tag">Spatial Analysis</span>
+        <span class="tag" data-zh="空间分析" data-en="Spatial Analysis">空间分析</span>
         <span class="tag sage">Python</span>
-        <span class="tag lilac">Urban Systems</span>
+        <span class="tag lilac" data-zh="城市系统" data-en="Urban Systems">城市系统</span>
       </div>
       <div class="r-links">
-        <a class="r-link" href="#">Read Paper →</a>
-        <a class="r-link" href="#">GitHub →</a>
+        <a class="r-link" href="#" data-zh="阅读论文 →" data-en="Read Paper →">阅读论文 →</a>
+        <a class="r-link" href="#" data-zh="GitHub →" data-en="GitHub →">GitHub →</a>
       </div>
     </div>
   </div>
@@ -91,46 +92,31 @@
   <div class="research-item reveal">
     <div class="r-year-col"><div class="r-year">2023</div></div>
     <div class="r-card">
-      <div class="r-type">Course Project</div>
-      <div class="r-title">[ Another Research / Project Title ]</div>
-      <div class="r-venue">CASA — Foundations of Spatial Data Science</div>
-      <p class="r-abstract">[ Replace with a description of this work. ]</p>
+      <div class="r-type" data-zh="课程项目" data-en="Course Project">课程项目</div>
+      <div class="r-title" data-zh="[ 另一个研究/项目标题 ]" data-en="[ Another Research / Project Title ]">[ 另一个研究/项目标题 ]</div>
+      <div class="r-venue" data-zh="CASA — 空间数据科学基础" data-en="CASA — Foundations of Spatial Data Science">CASA — 空间数据科学基础</div>
+      <p class="r-abstract" data-zh="[ 在此替换为这项工作的描述。]" data-en="[ Replace with a description of this work. ]">[ 在此替换为这项工作的描述。]</p>
       <div class="r-tags" style="margin-bottom:14px">
-        <span class="tag peach">Data Science</span>
-        <span class="tag mauve">Visualisation</span>
+        <span class="tag peach" data-zh="数据科学" data-en="Data Science">数据科学</span>
+        <span class="tag mauve" data-zh="可视化" data-en="Visualisation">可视化</span>
       </div>
       <div class="r-links">
-        <a class="r-link" href="#">Notebook →</a>
+        <a class="r-link" href="#" data-zh="笔记本 →" data-en="Notebook →">笔记本 →</a>
       </div>
     </div>
   </div>
 
   <div class="interests-section">
-    <h2 class="reveal">Research <em style="font-style:italic;color:var(--rose)">Interests</em></h2>
+    <h2 class="reveal" data-zh="研究<em style='font-style:italic;color:var(--rose)'>兴趣</em>" data-en="Research <em style='font-style:italic;color:var(--rose)'>Interests</em>">研究<em style='font-style:italic;color:var(--rose)'>兴趣</em></h2>
     <div class="interest-grid">
-      <div class="interest-card reveal"><span class="interest-icon">🚇</span><div class="interest-name">Urban Mobility</div><div class="interest-desc">Transport accessibility & equity</div></div>
-      <div class="interest-card reveal"><span class="interest-icon">🗺️</span><div class="interest-name">Spatial Inequality</div><div class="interest-desc">Geographic patterns of disparity</div></div>
-      <div class="interest-card reveal"><span class="interest-icon">🏙️</span><div class="interest-name">Urban Morphology</div><div class="interest-desc">Form, structure & change</div></div>
-      <div class="interest-card reveal"><span class="interest-icon">🤖</span><div class="interest-name">Geocomputation</div><div class="interest-desc">ML applied to urban problems</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🚇</span><div class="interest-name" data-zh="城市交通" data-en="Urban Mobility">城市交通</div><div class="interest-desc" data-zh="交通可达性与公平" data-en="Transport accessibility & equity">交通可达性与公平</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🗺️</span><div class="interest-name" data-zh="空间不平等" data-en="Spatial Inequality">空间不平等</div><div class="interest-desc" data-zh="地理差异分布" data-en="Geographic patterns of disparity">地理差异分布</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🏙️</span><div class="interest-name" data-zh="城市形态" data-en="Urban Morphology">城市形态</div><div class="interest-desc" data-zh="形态、结构与变化" data-en="Form, structure & change">形态、结构与变化</div></div>
+      <div class="interest-card reveal"><span class="interest-icon">🤖</span><div class="interest-name" data-zh="地理计算" data-en="Geocomputation">地理计算</div><div class="interest-desc" data-zh="机器学习应用于城市问题" data-en="ML applied to urban problems">机器学习应用于城市问题</div></div>
     </div>
   </div>
 </main>
 
-<script>
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
-  document.querySelectorAll('a').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-  });
-  document.querySelectorAll('a[href]').forEach(a => {
-    if (!a.target) a.addEventListener('click', e => {
-      const dest = a.href; if (!dest || dest.startsWith('#')) return;
-      e.preventDefault();
-      document.getElementById('overlay').classList.add('exit');
-      setTimeout(() => { window.location.href = dest; }, 520);
-    });
-  });
-</script>
+<script src="_nav.js"></script>
 </body>
 </html>
